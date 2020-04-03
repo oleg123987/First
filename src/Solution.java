@@ -28,7 +28,6 @@ public class Solution {
             }
         }
         return sum;
-
     }
 
     @Test
