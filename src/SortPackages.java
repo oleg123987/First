@@ -1,11 +1,9 @@
+import org.junit.Assert;
+import org.junit.Test;
+
 public class SortPackages {
 
     public static void main(String[] args) {
-        solve(10, 10, 10, 15);
-        solve(10, 150, 10, 15);
-        solve(100, 100, 100, 15);
-        solve(150, 150, 150, 15);
-        solve(150, 150, 150, 20); // REJECTED!
     }
 
     public static String solve(int width, int height, int length, int mass) {
@@ -18,5 +16,16 @@ public class SortPackages {
         System.out.println(stack);
         return stack;
     }
+
+    @Test
+    public void testSolve() {
+        Assert.assertEquals("STANDARD", solve(10, 10, 10, 15));
+        Assert.assertEquals("SPECIAL", solve(10, 150, 10, 15));
+        Assert.assertEquals("SPECIAL", solve(100, 100, 100, 15));
+        Assert.assertEquals("SPECIAL", solve(150, 150, 150, 15));
+        Assert.assertEquals("SPECIAL", solve(10, 10, 10, 25));
+        Assert.assertEquals("REJECTED", solve(150, 150, 150, 20));
+    }
+
 
 }

@@ -1,11 +1,13 @@
+import org.junit.*;
 
 public class Solution {
     /*
     sumRange должен возвращать сумму чисел, значения которых между 10 и 100 (включительно)
     и принадлежащих к массиву ints.
      */
+    static int[] ints = {1, 20, 3, 10, -2, 100};
+
     public static void main(String[] args) {
-        int[] ints = {1, 20, 3, 10, -2, 100};
         int s = sumRange(ints); // =130
         System.out.println(s);
         ints = new int[]{1, 200, 300, 10, -2, 10, -3, 15};
@@ -29,8 +31,9 @@ public class Solution {
 
     }
 
-//    @Test
-//    public void test() {
-//        Assert.assertEquals
-//    }
+    @Test
+    public void test() {
+        Assert.assertEquals(130, sumRange(ints));
+        Assert.assertEquals(35, sumRange(new int[]{1, 200, 300, 10, -2, 10, -3, 15}));
+    }
 }
